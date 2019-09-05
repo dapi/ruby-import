@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dapi/ruby-import.svg?branch=master)](https://travis-ci.org/dapi/ruby-import)
 
-No litter global namespace, no states, no mixins.
+Use external module without mixins. No litter to global or local namespace.
 
 ## Installation
 
@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ```ruby
 
-# Import bunch of methods of the file from $LOADPATH in to local namespace constant
+# Import file found in $LOAD_PATH and return a bunch of defined methods
 Utils = import 'utils'
 
 # Invoke imported method
