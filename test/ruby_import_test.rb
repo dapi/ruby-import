@@ -32,5 +32,17 @@ class RubyImportTest < Minitest::Test
     $LOAD_PATH.unshift dir
   end
 
+  def test_module_with_many_constants
+    assert_raises RubyImport::Error do
+      import './test/dummy/module_with_many_constants.rb'
+    end
+  end
+
+  def test_module_without_constants
+    assert_raises RubyImport::Error do
+      import './test/dummy/module_with_many_constants.rb'
+    end
+  end
+
   def test_without_extension; end
 end

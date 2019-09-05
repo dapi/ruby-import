@@ -27,10 +27,11 @@ module RubyImport
     require file
     defined_constants = Object.constants - current_constants
 
-    # TODO: error if there are more than one constant is defined
-    # TODO: error is defined constant is not subcpass of Importable
+    raise Error, "Too many constats (#{defined_constants.count}) defined in #{file}" if defined_constants.count > 1
+    raise Error, "No module constant defined in #{file}" unless defined_constants.count == 1
+
     defined_constants.first ||
-      raise("File #{file} does not export any module to import or it is already imported by other filename")
+      raise(Error, "File #{file} does not export any module to import or it is already imported by other filename")
   end
 
   def find_file_path(file)
