@@ -12,6 +12,7 @@ module RubyImport
   @@imported_files = {}
 
   def import(file)
+    file += '.rb' unless file.end_with? '.rb'
     file = prepare_file file
     defined_module = @@imported_files[file]
 

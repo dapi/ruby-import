@@ -24,8 +24,8 @@ Or install it yourself as:
 
 ```ruby
 
-# Import bunch of methods in to local namespace constant
-Utils = import 'utils.rb'
+# Import bunch of methods of the file from $LOADPATH in to local namespace constant
+Utils = import 'utils'
 
 # Invoke imported method
 Utils.some_imported_method()

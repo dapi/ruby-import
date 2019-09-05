@@ -14,6 +14,11 @@ class RubyImportTest < Minitest::Test
     assert u.sum(1, 2)
   end
 
+  def test_without_extension
+    u = import './test/dummy/module1'
+    assert u.sum(1, 2)
+  end
+
   def test_double_import_does_not_fall
     u = import './test/dummy/module1.rb'
     assert u.sum(1, 2)
@@ -43,6 +48,4 @@ class RubyImportTest < Minitest::Test
       import './test/dummy/module_with_many_constants.rb'
     end
   end
-
-  def test_without_extension; end
 end
