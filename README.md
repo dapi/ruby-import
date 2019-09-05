@@ -22,7 +22,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+
+# Import bunch of methods in to local namespace constant
+Utils = import 'utils.rb'
+
+# Invoke imported method
+Utils.some_imported_method()
+```
 
 ## Development
 

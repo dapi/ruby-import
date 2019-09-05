@@ -21,7 +21,7 @@ module RubyImport
 
       # TODO: error if there are more than one constant is defined
       # TODO error is defined constant is not subcpass of Importable
-      defined_module = defined_constants.first
+      defined_module = defined_constants.first || raise("File #{file} does not export any module to import or it is already imported by other filename")
       @@imported_files[file] = defined_module
     end
 
