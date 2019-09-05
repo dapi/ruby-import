@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Danil Pismenny']
   spec.email         = ['danil@brandymint.ru']
 
-  spec.summary       = 'ES7 style modules importing in Ruby.'
+  spec.summary       = 'ES7 style modules in Ruby.'
   spec.description   = 'No litter global namespace, no states, no mixins.'
   spec.homepage      = 'https://github.com/dapi/ruby-import'
   spec.license       = 'MIT'

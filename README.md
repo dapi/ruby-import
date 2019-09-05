@@ -1,8 +1,8 @@
-# Import for Ruby
+# ES7 style modules in Ruby.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/import`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/dapi/ruby-import.svg?branch=master)](https://travis-ci.org/dapi/ruby-import)
 
-TODO: Delete this and the text above, and describe your gem
+No litter global namespace, no states, no mixins.
 
 ## Installation
 
