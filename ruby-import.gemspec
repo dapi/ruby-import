@@ -31,6 +31,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'guard', '~> 2.15'
+  spec.add_development_dependency 'guard-ctags-bundler', '~> 1.4'
+  spec.add_development_dependency 'guard-minitest', '~> 2.4'
+  spec.add_development_dependency 'guard-rubocop', '~> 1.3'
   spec.add_development_dependency 'minitest', '~> 5.0'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rubocop', '~> 0.74.0'
