@@ -2,6 +2,6 @@
 
 # frozen_string_literal: true
 
-module Import
+module RubyImport
   VERSION = '0.1.0'
 end

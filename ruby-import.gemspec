@@ -4,11 +4,11 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'import/version'
+require 'ruby_import/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'ruby-import'
-  spec.version       = Import::VERSION
+  spec.version       = RubyImport::VERSION
   spec.authors       = ['Danil Pismenny']
   spec.email         = ['danil@brandymint.ru']
 
