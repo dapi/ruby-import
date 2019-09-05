@@ -9,7 +9,7 @@ class RubyImportTest < Minitest::Test
     refute_nil ::RubyImport::VERSION
   end
 
-  def test_import_and_call_imported_method
+  def test_import_with_extension_and_call_imported_method
     u = import './test/dummy/module1.rb'
     assert u.sum(1, 2)
   end
@@ -21,4 +21,16 @@ class RubyImportTest < Minitest::Test
     u = import './test/dummy/module1.rb'
     assert u.sum(1, 2)
   end
+
+  def test_import_from_load_path
+    dir = File.join(__dir__, 'dummy')
+    $LOAD_PATH << dir
+
+    u = import 'module1.rb'
+    assert u.sum(1, 2)
+  ensure
+    $LOAD_PATH.unshift dir
+  end
+
+  def test_without_extension; end
 end
