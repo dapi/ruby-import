@@ -49,7 +49,7 @@ Utils.some_imported_method()
 
 ### Import from module
 
-This variant is good to use in autoload support frameworks like Ruby On Rails.
+This variant is good to use with autoload support frameworks like Ruby On Rails.
 
 ```ruby
 module SomeUtils
