@@ -6,4 +6,8 @@ module TestModule
   def sum(arg1, arg2)
     arg1 + arg2
   end
+
+  def dirty_method
+    @some = 1
+  end
 end

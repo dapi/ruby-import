@@ -11,6 +11,13 @@ class RubyImportTest < Minitest::Test
     end
   end
 
+  def test_dirty_methods_raises
+    u = import SomeMotule
+    assert_raises do
+      u.dirty_method
+    end
+  end
+
   def test_that_it_has_a_version_number
     refute_nil ::RubyImport::VERSION
   end
