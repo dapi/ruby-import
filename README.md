@@ -22,13 +22,26 @@ Or install it yourself as:
 
 ## Usage
 
+You have defined module-package called `./utils.rb` somewhere in `$LOAD_PATH`:
+
+```ruby
+module ModuleNameDoesNotMetter
+  def some_imported_method
+    return 123
+  end
+end
+```
+
+In you application you have to import and use in-module defined methods:
+
 ```ruby
 
-# Import file found in $LOAD_PATH and return a bunch of defined methods
+# Import find module and return a bunch of defined methods
 Utils = import 'utils'
 
 # Invoke imported method
 Utils.some_imported_method()
+# returns 123
 ```
 
 ## Development
