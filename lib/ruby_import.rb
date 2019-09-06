@@ -12,11 +12,17 @@ module RubyImport
   @@imported_files = {}
 
   def import(file)
-    file += '.rb' unless file.end_with? '.rb'
-    file = prepare_file file
-    defined_module = @@imported_files[file]
-    @@imported_files[file] = defined_module = require_module file unless defined_module
-    Class.new { include const_get defined_module }.new
+    if file.is_a? Module
+      defined_module = file
+    else
+      file += '.rb' unless file.end_with? '.rb'
+      file = prepare_file file
+      defined_module = @@imported_files[file]
+      @@imported_files[file] = defined_module = require_module file unless defined_module
+
+      defined_module = Object.const_get defined_module
+    end
+    Class.new { include defined_module }.new.freeze
   end
 
   private

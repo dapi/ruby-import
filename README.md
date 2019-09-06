@@ -22,6 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
+
+### Import from file
+
 You have defined module-package called `./utils.rb` somewhere in `$LOAD_PATH`:
 
 ```ruby
@@ -38,6 +41,29 @@ In you application you have to import and use in-module defined methods:
 
 # Import find module and return a bunch of defined methods
 Utils = import 'utils'
+
+# Invoke imported method
+Utils.some_imported_method()
+# returns 123
+```
+
+### Import from module
+
+This variant is good to use in autoload support frameworks like Ruby On Rails.
+
+```ruby
+module SomeUtils
+  def some_imported_method
+    return 123
+  end
+end
+```
+
+In you application you have to import and use in-module defined methods:
+
+```ruby
+# Import find module and return a bunch of defined methods
+Utils = import SomeUtils
 
 # Invoke imported method
 Utils.some_imported_method()

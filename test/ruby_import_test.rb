@@ -5,8 +5,19 @@
 require 'test_helper'
 
 class RubyImportTest < Minitest::Test
+  module SomeMotule
+    def sum(arg1, arg2)
+      arg1 + arg2
+    end
+  end
+
   def test_that_it_has_a_version_number
     refute_nil ::RubyImport::VERSION
+  end
+
+  def test_import_from_module
+    u = import SomeMotule
+    assert u.sum(1, 2)
   end
 
   def test_import_with_extension_and_call_imported_method
